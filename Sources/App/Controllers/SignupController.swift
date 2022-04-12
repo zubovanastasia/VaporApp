@@ -10,7 +10,7 @@ import Vapor
 
 class SignupController {
     func signup(_ req: Request) throws -> EventLoopFuture<DefaultResponse> {
-        guard let body = try? req.content.decode(SignupRequest.self) else {
+        guard let body = try? req.content.decode(UserRequest.self) else {
             throw Abort(.badRequest)
         }
         print(body)

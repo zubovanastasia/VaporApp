@@ -21,6 +21,9 @@ func routes(_ app: Application) throws {
     
     let logoutController = LogoutController()
     app.post("logout", use: logoutController.logout)
+    
+    let catalogController = CatalogController()
+    app.post("getCatalog", use: catalogController.getCatalog)
 
     try app.register(collection: TodoController())
 }
