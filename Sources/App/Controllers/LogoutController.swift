@@ -8,14 +8,14 @@
 import Foundation
 import Vapor
 
-class ChangeUserDataController {
-    func changeUserData(_ req: Request) throws -> EventLoopFuture<DefaultResponse> {
+class LogoutController {
+    func logout(_ req: Request) throws -> EventLoopFuture<DefaultResponse> {
         guard let body = try? req.content.decode(UserRequest.self) else {
             throw Abort(.badRequest)
         }
         print(body)
         let response = DefaultResponse(result: 1,
-                                       successMessage: "Данные успешно изменены",
+                                       successMessage: "Выход",
                                        errorMessage: nil)
         return req.eventLoop.future(response)
     }

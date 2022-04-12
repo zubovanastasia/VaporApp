@@ -18,6 +18,9 @@ func routes(_ app: Application) throws {
     
     let changeUserDataController = ChangeUserDataController()
     app.post("changeUserData", use: changeUserDataController.changeUserData)
+    
+    let logoutController = LogoutController()
+    app.post("logout", use: logoutController.logout)
 
     try app.register(collection: TodoController())
 }
