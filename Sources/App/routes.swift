@@ -24,6 +24,9 @@ func routes(_ app: Application) throws {
     
     let catalogController = CatalogController()
     app.post("getCatalog", use: catalogController.getCatalog)
+    
+    let goodController = GoodController()
+    app.post("getGood", use: goodController.getCatalog)
 
     try app.register(collection: TodoController())
 }

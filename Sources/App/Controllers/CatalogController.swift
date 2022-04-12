@@ -14,7 +14,9 @@ class CatalogController {
             throw Abort(.badRequest)
         }
         print(body)
-        let response = CatalogResponse(productId: 123, productName: "Товар", price: 3000)
+        let response = CatalogResponse(productId: 123,
+                                       productName: "Товар",
+                                       price: 3000)
         return req.eventLoop.future(response)
     }
 }
