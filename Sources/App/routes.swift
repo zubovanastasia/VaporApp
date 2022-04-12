@@ -20,11 +20,11 @@ func routes(_ app: Application) throws {
     app.post("login", use: loginController.login)
     app.post("changeUserData", use: changeUserDataController.changeUserData)
     app.post("logout", use: logoutController.logout)
-    app.post("getCatalog", use: catalogController.getCatalog)
-    app.post("getGood", use: goodController.getCatalog)
-    app.post("getReviews", use: reviewsController.getReviews)
-    app.post("addReview", use: reviewsController.addReview)
-    app.post("removeReview", use: reviewsController.removeReview)
+    app.post("getcatalog", use: catalogController.getCatalog)
+    app.post("getcood", use: goodController.getCatalog)
+    app.post("getreviews", use: reviewsController.getReviews)
+    app.post("addreview", use: reviewsController.addReview)
+    app.post("removereview", use: reviewsController.removeReview)
 
     try app.register(collection: TodoController())
 }
