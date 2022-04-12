@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-struct SignUpRequest: Content {
+struct SignupRequest: Content {
     var id_user: Int
     var username: String
     var password: String

@@ -10,11 +10,14 @@ func routes(_ app: Application) throws {
         return "Hello, world!"
     }
     
-    let authController = AuthController()
-    app.post("signup", use: authController.signUp)
+    let authController = SignupController()
+    app.post("signup", use: authController.signup)
     
     let loginController = LoginController()
     app.post("login", use: loginController.login)
+    
+    let changeUserDataController = ChangeUserDataController()
+    app.post("changeUserData", use: changeUserDataController.changeUserData)
 
     try app.register(collection: TodoController())
 }
