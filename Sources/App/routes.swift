@@ -9,6 +9,7 @@ func routes(_ app: Application) throws {
     let catalogController = CatalogController()
     let goodController = GoodController()
     let reviewsController = ReviewsController()
+    let basketController = BasketController()
 
     app.get { req in
         return "It works!"
@@ -25,6 +26,10 @@ func routes(_ app: Application) throws {
     app.post("getreviews", use: reviewsController.getReviews)
     app.post("addreview", use: reviewsController.addReview)
     app.post("removereview", use: reviewsController.removeReview)
+    app.post("getbasket", use: basketController.getBasket)
+    app.post("paybasket", use: basketController.payBasket)
+    app.post("addtobasket", use: basketController.addToBasket)
+    app.post("deletefrombasket", use: basketController.deleteFromBasket)
 
     try app.register(collection: TodoController())
 }
